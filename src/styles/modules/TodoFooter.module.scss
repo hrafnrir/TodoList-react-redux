@@ -1,0 +1,117 @@
+@import './../general';
+
+.todoFooter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  min-height: 44px;
+  background-color: var(--todo-background-color);
+  border-bottom: {
+    left-radius: 4px;
+    right-radius: 4px;
+  }
+
+  @include breakpoint(medium) {
+    padding: 20px 26px;
+    border-bottom: {
+      left-radius: 6px;
+      right-radius: 6px;
+    }
+  }
+}
+
+.todoFooter__total {
+  @include p-small;
+  color: var(--main-text-color);
+  text-align: left;
+
+  @include breakpoint(medium) {
+    text-align: auto;
+  }
+}
+
+.todoFooter__filtersList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todoFooter__filter {
+  color: var(--main-text-color);
+  background-color: inherit;
+  margin-right: 10px;
+
+  @include p-medium;
+
+  @include breakpoint(medium) {
+    margin-right: 15px;
+  }
+
+  @include breakpoint(large) {
+    cursor: pointer;
+    transition: color 0.2s linear;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    @include breakpoint(large) {
+      color: var(--active-text-color);
+      transition: color 0.2s linear;
+    }
+  }
+
+  &:active {
+    color: var(--active-filter-color);
+  }
+
+  &_selected {
+    color: var(--active-filter-color);
+
+    &:hover {
+      color: var(--active-filter-color);
+    }
+  }
+
+  &_nonActive {
+    cursor: default;
+
+    &:hover,
+    &:active {
+      color: var(--main-text-color);
+    }
+  }
+}
+
+.todoFooter__clearBtn {
+  display: inline;
+  color: var(--main-text-color);
+  background-color: transparent;
+  margin-left: auto;
+  text-align: right;
+
+  @include p-small;
+
+  @include breakpoint(medium) {
+    text-align: auto;
+  }
+
+  @include breakpoint(large) {
+    cursor: pointer;
+    transition: color 0.2s linear;
+  }
+
+  &:hover,
+  &:active {
+    color: var(--accent-text-color);
+
+    @include breakpoint(large) {
+      transition: color 0.2s linear;
+    }
+  }
+}

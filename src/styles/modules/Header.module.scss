@@ -1,0 +1,55 @@
+@import './../general';
+
+.pageHeader {
+  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint(medium) {
+    padding-top: 100px;
+  }
+}
+
+.pageHeader__heading {
+  display: inline-block;
+  color: var(--todo-background-color);
+  margin: {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 25px;
+  }
+
+  @include h1;
+}
+
+.pageHeader__themeBtn {
+  width: var(--theme-button-small-width);
+  height: 24px;
+  background: {
+    color: transparent;
+    image: var(--theme-button-icon);
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
+
+  @include breakpoint(medium) {
+    width: var(--theme-button-width);
+    height: 33px;
+  }
+
+  @include breakpoint(large) {
+    cursor: pointer;
+    transition: filter 1s;
+  }
+
+  &:hover {
+    @include breakpoint(large) {
+      filter: drop-shadow(0px 0px 20px #fff8b5)
+        drop-shadow(0px 0px 20px rgba(255, 248, 181, 0.5));
+      transition: filter 1s;
+    }
+  }
+}

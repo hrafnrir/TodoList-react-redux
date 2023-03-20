@@ -1,0 +1,50 @@
+@import './../general';
+
+.pageFooter {
+  margin-top: 36px;
+  padding-bottom: 36px;
+
+  @include breakpoint(medium) {
+    margin-top: 44px;
+    padding-bottom: 60px;
+  }
+}
+
+.pageFooter__item {
+  color: var(--main-text-color);
+  text-align: center;
+  margin-bottom: 14px;
+
+  @include p-small;
+
+  @include breakpoint(medium) {
+    margin-bottom: 16px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.pageFooter__themeBtn {
+  background-color: transparent;
+  color: var(--main-text-color);
+
+  @include p-small;
+
+  @include breakpoint(large) {
+    cursor: pointer;
+    transition: color 0.2s linear;
+  }
+
+  &:hover {
+    @include breakpoint(large) {
+      color: var(--active-text-color);
+      transition: color 0.2s linear;
+    }
+  }
+
+  &:active {
+    color: var(--active-text-color);
+  }
+}
