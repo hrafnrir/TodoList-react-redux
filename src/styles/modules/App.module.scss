@@ -1,11 +1,4 @@
-@import "./../general";
-
-body {
-  color: var(--main-text-color);
-  background-color: var(--page-background-color);
-
-  @include p-normal;
-}
+@import "../container", "../breakpoints";
 
 .background {
   position: relative;
