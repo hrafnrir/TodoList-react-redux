@@ -1,6 +1,6 @@
-@import "../breakpoints", "../typography";
+@import "../../../styles/breakpoints", "../../../styles/typography";
 
-.todoHeader {
+.root {
   position: relative;
   width: 100%;
   padding: 14px 10px;
@@ -17,7 +17,7 @@
   }
 }
 
-.todoHeader__label {
+.label {
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -38,7 +38,7 @@
     transition: transform 1s ease;
   }
 
-  .todoHeader:hover & {
+  .root:hover & {
     @include breakpoint(large) {
       transform: rotate(180deg);
       transition: transform 1s ease;
@@ -46,7 +46,7 @@
   }
 }
 
-.todoHeader__field {
+.input {
   position: absolute;
   top: 13px;
   left: 38px;

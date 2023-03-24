@@ -1,6 +1,6 @@
-@import "../container", "../breakpoints";
+@import "styles/container", "styles/breakpoints";
 
-.background {
+.root {
   position: relative;
   max-height: 240px;
 

@@ -1,6 +1,6 @@
-@import "../breakpoints", "../typography";
+@import "../../../styles/breakpoints", "../../../styles/typography";
 
-.item {
+.root {
   position: relative;
   width: 100%;
   min-height: 46px;
@@ -11,7 +11,7 @@
   }
 }
 
-.itemCheckbox {
+.checkbox {
   opacity: 0;
   z-index: 10;
   position: absolute;
@@ -32,7 +32,7 @@
   }
 }
 
-.itemLabel {
+.label {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -53,7 +53,7 @@
     min-height: 69px;
   }
 
-  .itemCheckbox:checked + & {
+  .checkbox:checked + & {
     color: var(--completed-text-color);
     text-decoration: line-through;
   }
@@ -80,13 +80,13 @@
       height: 28px;
     }
 
-    .itemCheckbox:hover + & {
+    .checkbox:hover + & {
       @include breakpoint(large) {
         background-image: var(--checkbox-hover-icon);
       }
     }
 
-    .itemCheckbox:checked + & {
+    .checkbox:checked + & {
       width: 20px;
       background-image: var(--checkbox-checked-icon);
 
@@ -97,7 +97,7 @@
   }
 }
 
-.itemEditInput {
+.editInput {
   z-index: 10;
   position: absolute;
   top: 12px;
@@ -115,7 +115,7 @@
   }
 }
 
-.itemDeleteBtn {
+.deleteBtn {
   position: absolute;
   top: 17px;
   right: 14px;
@@ -142,7 +142,7 @@
     transition: opacity 0.4s linear;
   }
 
-  .item:hover & {
+  .root:hover & {
     @include breakpoint(large) {
       opacity: 1;
       transition: {
@@ -153,7 +153,7 @@
     }
   }
 
-  .item:hover &:hover {
+  .root:hover &:hover {
     @include breakpoint(large) {
       opacity: 1;
       background-image: var(--delete-hover-icon);

@@ -1,10 +1,11 @@
 import TodoItemElement from "./TodoItemElement.jsx";
-import s from "./../../styles/modules/TodoList.module.scss";
+
+import s from "./styles/TodoList.module.scss";
 
 const TodoList = () => {
   return (
     <section>
-      <ul className={s.todoList}>
+      <ul className={s.list}>
         <TodoItemElement />
       </ul>
     </section>

@@ -1,14 +1,14 @@
-import s from "./../../styles/modules/TodoItemElement.module.scss";
+import s from "./styles/TodoItemElement.module.scss";
 
 const TodoItemElement = () => {
   return (
-    <li className={s.item}>
-      <input className={s.itemCheckbox} id="task-checkbox" type="checkbox" />
-      <label className={s.itemLabel} htmlFor="task-checkbox">
+    <li className={s.root}>
+      <input className={s.checkbox} id="task-checkbox" type="checkbox" />
+      <label className={s.label} htmlFor="task-checkbox">
         Task body
       </label>
-      <input className={s.itemEditInput} type="text" hidden />
-      <button className={s.itemDeleteBtn}></button>
+      <input className={s.editInput} type="text" hidden />
+      <button className={s.deleteBtn}></button>
     </li>
   );
 };

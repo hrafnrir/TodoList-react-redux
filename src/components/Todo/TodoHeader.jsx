@@ -1,13 +1,13 @@
-import s from "./../../styles/modules/TodoHeader.module.scss";
+import s from "./styles/TodoHeader.module.scss";
 
 const TodoHeader = () => {
   return (
-    <header className={s.todoHeader}>
-      <label className={s.todoHeader__label} htmlFor="new-task">
+    <header className={s.root}>
+      <label className={s.label} htmlFor="new-task">
         {""}
       </label>
       <input
-        className={s.todoHeader__field}
+        className={s.input}
         id="new-task"
         type="text"
         placeholder="What needs to be done?"

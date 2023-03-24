@@ -1,12 +1,12 @@
-import s from './../../styles/modules/Footer.module.scss';
+import s from "./styles/Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer className={s.pageFooter}>
-      <ul className={s.pageFooter__list}>
-        <li className={s.pageFooter__item}>Double-click to edit a todo</li>
-        <li className={s.pageFooter__item}>
-          <button className={s.pageFooter__themeBtn}>Dark theme</button>
+    <footer className={s.root}>
+      <ul className={s.list}>
+        <li className={s.item}>Double-click to edit a todo</li>
+        <li className={s.item}>
+          <button className={s.themeBtn}>Dark theme</button>
         </li>
       </ul>
     </footer>

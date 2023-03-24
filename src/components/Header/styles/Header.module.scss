@@ -1,6 +1,6 @@
-@import "../breakpoints", "../typography";
+@import "../../../styles/breakpoints", "../../../styles/typography";
 
-.pageHeader {
+.root {
   padding-top: 60px;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   }
 }
 
-.pageHeader__heading {
+.heading {
   display: inline-block;
   color: var(--todo-background-color);
   margin: {
@@ -24,7 +24,7 @@
   @include h1;
 }
 
-.pageHeader__themeBtn {
+.themeBtn {
   width: var(--theme-button-small-width);
   height: 24px;
   background: {

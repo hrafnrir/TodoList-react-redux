@@ -1,6 +1,6 @@
-@import "../breakpoints", "../typography";
+@import "../../../styles/breakpoints", "../../../styles/typography";
 
-.pageFooter {
+.root {
   margin-top: 36px;
   padding-bottom: 36px;
 
@@ -10,7 +10,7 @@
   }
 }
 
-.pageFooter__item {
+.item {
   color: var(--main-text-color);
   text-align: center;
   margin-bottom: 14px;
@@ -26,7 +26,7 @@
   }
 }
 
-.pageFooter__themeBtn {
+.themeBtn {
   background-color: transparent;
   color: var(--main-text-color);
 

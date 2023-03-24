@@ -1,6 +1,6 @@
-@import "../breakpoints", "../typography";
+@import "../../../styles/breakpoints", "../../../styles/typography";
 
-.todoFooter {
+.root {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 18px;
@@ -23,7 +23,7 @@
   }
 }
 
-.todoFooter__total {
+.totalTodos {
   @include p-small;
   color: var(--main-text-color);
   text-align: left;
@@ -33,13 +33,13 @@
   }
 }
 
-.todoFooter__filtersList {
+.filtersList {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.todoFooter__filter {
+.filter {
   color: var(--main-text-color);
   background-color: inherit;
   margin-right: 10px;
@@ -88,7 +88,7 @@
   }
 }
 
-.todoFooter__clearBtn {
+.clearBtn {
   display: inline;
   color: var(--main-text-color);
   background-color: transparent;

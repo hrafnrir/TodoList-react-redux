@@ -1,17 +1,17 @@
-import s from "./../../styles/modules/TodoFooter.module.scss";
+import s from "./styles/TodoFooter.module.scss";
 
 const TodoFooter = () => {
   return (
-    <footer className={s.todoFooter}>
-      <span className={s.todoFooter__total}>
+    <footer className={s.root}>
+      <span className={s.totalTodos}>
         <span>1</span> items left
       </span>
-      <div className={s.todoFooter__filtersList}>
-        <button className={s.todoFooter__filter}>All</button>
-        <button className={s.todoFooter__filter}>Active</button>
-        <button className={s.todoFooter__filter}>Completed</button>
+      <div className={s.filtersList}>
+        <button className={s.filter}>All</button>
+        <button className={s.filter}>Active</button>
+        <button className={s.filter}>Completed</button>
       </div>
-      <button className={s.todoFooter__clearBtn}>Clear completed</button>
+      <button className={s.clearBtn}>Clear completed</button>
     </footer>
   );
 };
