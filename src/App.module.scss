@@ -1,0 +1,37 @@
+@import "styles/container", "styles/breakpoints";
+
+.root {
+  position: relative;
+  max-height: 240px;
+
+  @include breakpoint(medium) {
+    max-height: 360px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: linear-gradient(
+      95deg,
+      var(--grad-light-color) 0%,
+      var(--grad-dark-color) 100%
+    );
+
+    @include breakpoint(medium) {
+      background-image: linear-gradient(
+        105deg,
+        var(--grad-light-color) 30%,
+        var(--grad-dark-color) 90%
+      );
+    }
+  }
+}
+
+.container {
+  @include container;
+}

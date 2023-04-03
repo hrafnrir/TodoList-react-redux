@@ -1,0 +1,18 @@
+@import "../../../styles/breakpoints";
+
+.list {
+  padding-top: 4px;
+  background-color: var(--todo-background-color);
+  border-top: {
+    left-radius: 4px;
+    right-radius: 4px;
+  }
+
+  @include breakpoint(medium) {
+    padding-top: 6px;
+    border-top: {
+      left-radius: 6px;
+      right-radius: 6px;
+    }
+  }
+}

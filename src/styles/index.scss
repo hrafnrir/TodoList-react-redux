@@ -1,0 +1,8 @@
+@import "~normalize.css", "reset", "variables", "breakpoints", "typography";
+
+body {
+  color: var(--main-text-color);
+  background-color: var(--page-background-color);
+
+  @include p-normal;
+}
