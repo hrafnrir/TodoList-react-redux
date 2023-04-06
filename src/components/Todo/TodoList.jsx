@@ -7,9 +7,9 @@ import TodoItemElement from "./TodoItemElement.jsx";
 import s from "./styles/TodoList.module.scss";
 
 const TodoList = () => {
-  const todoItems = useSelector(selectTodoIds)
-    .sort((a, b) => b - a)
-    .map((item) => <TodoItemElement key={item} id={item} />);
+  const todoItems = useSelector(selectTodoIds).map((item) => (
+    <TodoItemElement key={item} id={item} />
+  ));
 
   return (
     <section>
