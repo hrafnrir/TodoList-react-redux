@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 import {
@@ -7,13 +7,10 @@ import {
   toggleTodoCompleted,
   deleteTodo,
 } from "../../model/slices/todoSlice.js";
-import { selectTodoWithProps } from "../../model/selectors.js";
 
 import s from "./styles/TodoItemElement.module.scss";
 
-const TodoItemElement = ({ id }) => {
-  const { title, isCompleted } = useSelector(selectTodoWithProps(id));
-
+const TodoItemElement = ({ todo: { id, title, isCompleted } }) => {
   const [editing, setEditing] = useState(false);
   const [task, setTask] = useState(title);
 
@@ -77,7 +74,7 @@ const TodoItemElement = ({ id }) => {
 };
 
 TodoItemElement.propTypes = {
-  id: PropTypes.string.isRequired,
+  todo: PropTypes.object.isRequired,
 };
 
 export default TodoItemElement;

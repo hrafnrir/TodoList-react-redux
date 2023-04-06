@@ -3,11 +3,23 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const todos = JSON.parse(localStorage.getItem("todo")) || [];
 const initialState = {
   todos,
+  filter: "all",
 };
 
-const deleteOneTodo = (state, id) => {
-  const i = state.findIndex((item) => item.id === id);
-  state.splice(i, 1);
+const deleteOneTodo = (todos, id) => {
+  const i = todos.findIndex((item) => item.id === id);
+  todos.splice(i, 1);
+};
+
+const switchEmptyFilter = (state) => {
+  if (
+    (!state.todos.find((item) => !item.isCompleted) &&
+      state.filter === "active") ||
+    (!state.todos.find((item) => item.isCompleted) &&
+      state.filter === "completed")
+  ) {
+    state.filter = "all";
+  }
 };
 
 const todoSlice = createSlice({
@@ -20,6 +32,8 @@ const todoSlice = createSlice({
         title: action.payload.title,
         isCompleted: false,
       });
+
+      state.filter === "completed" && (state.filter = "all");
     },
 
     editTodo(state, action) {
@@ -30,10 +44,14 @@ const todoSlice = createSlice({
     toggleTodoCompleted(state, action) {
       const todo = state.todos.find((item) => item.id === action.payload.id);
       todo.isCompleted = !todo.isCompleted;
+
+      switchEmptyFilter(state);
     },
 
     deleteTodo(state, action) {
       deleteOneTodo(state.todos, action.payload.id);
+
+      switchEmptyFilter(state);
     },
 
     deleteCompletedTodos(state) {
@@ -43,6 +61,12 @@ const todoSlice = createSlice({
       for (let todo of completedTodos) {
         deleteOneTodo(state.todos, todo.id);
       }
+
+      switchEmptyFilter(state);
+    },
+
+    updateFilter(state, action) {
+      state.filter = action.payload.filter;
     },
   },
 });
@@ -53,6 +77,7 @@ export const {
   toggleTodoCompleted,
   deleteTodo,
   deleteCompletedTodos,
+  updateFilter,
 } = todoSlice.actions;
 
 export default todoSlice.reducer;
