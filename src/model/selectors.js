@@ -31,3 +31,5 @@ export const selectDisabledFilter = createSelector(selectTodos, (todos) =>
     ? "completed"
     : "none"
 );
+
+export const selectDarkTheme = (state) => state.app.darkTheme;
