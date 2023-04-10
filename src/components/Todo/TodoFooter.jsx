@@ -22,7 +22,9 @@ const TodoFooter = () => {
 
   const handleClickOnFilter = (e) => {
     const name = e.target.name;
+
     if (name === disabledFilter) return;
+
     dispatch(updateFilter({ filter: name }));
   };
 

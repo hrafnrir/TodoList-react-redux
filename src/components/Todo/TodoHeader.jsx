@@ -12,6 +12,7 @@ const TodoHeader = () => {
 
   const handleKeyUp = (e) => {
     const title = e.target.value.trim();
+
     if (e.key === "Enter" && title !== "") {
       dispatch(addTodo({ title }));
       setTask("");

@@ -25,9 +25,9 @@ export const selectTotalActiveTodos = createSelector(
 );
 
 export const selectDisabledFilter = createSelector(selectTodos, (todos) =>
-  !todos.find((item) => !item.isCompleted)
+  !todos.some((item) => !item.isCompleted)
     ? "active"
-    : !todos.find((item) => item.isCompleted)
+    : !todos.some((item) => item.isCompleted)
     ? "completed"
     : "none"
 );

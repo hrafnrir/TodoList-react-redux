@@ -6,17 +6,13 @@ const initialState = {
   filter: "all",
 };
 
-const deleteOneTodo = (todos, id) => {
-  const i = todos.findIndex((item) => item.id === id);
-  todos.splice(i, 1);
-};
-
 const switchEmptyFilter = (state) => {
   if (
-    (!state.todos.find((item) => !item.isCompleted) &&
-      state.filter === "active") ||
-    (!state.todos.find((item) => item.isCompleted) &&
-      state.filter === "completed")
+    !state.todos.some(
+      (item) =>
+        (!item.isCompleted && state.filter === "active") ||
+        (item.isCompleted && state.filter === "completed")
+    )
   ) {
     state.filter = "all";
   }
@@ -49,18 +45,13 @@ const todoSlice = createSlice({
     },
 
     deleteTodo(state, action) {
-      deleteOneTodo(state.todos, action.payload.id);
+      state.todos = state.todos.filter(({ id }) => id !== action.payload.id);
 
       switchEmptyFilter(state);
     },
 
     deleteCompletedTodos(state) {
-      const completedTodos = state.todos.filter(
-        (item) => item.isCompleted === true
-      );
-      for (let todo of completedTodos) {
-        deleteOneTodo(state.todos, todo.id);
-      }
+      state.todos = state.todos.filter((item) => !item.isCompleted);
 
       switchEmptyFilter(state);
     },
