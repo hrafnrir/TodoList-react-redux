@@ -25,3 +25,31 @@ body[data-theme="light"] {
   --theme-button-width: 33px;
   --theme-button-small-width: 24px;
 }
+
+/* dark theme variables */
+
+body[data-theme="dark"] {
+  --todo-background-color: #222222;
+  --active-text-color: #d1d1d1;
+  --completed-text-color: #3f3f3f;
+  --main-text-color: #666666;
+  --border-color: #1b1a1a;
+  --page-background-color: #1d1d1d;
+  --grad-light-color: #2d4860;
+  --grad-dark-color: #132c43;
+  --active-filter-color: #2d4860;
+  --accent-text-color: #872f1c;
+
+  --theme-button-icon: url("../assets/icons/darkTheme/moon.svg");
+  --delete-icon: url("../assets/icons/darkTheme/delete.svg");
+  --delete-hover-icon: url("../assets/icons/darkTheme/delete-hover.svg");
+  --pen-icon: url("../assets/icons/darkTheme/pen.svg");
+  --pen-hover-icon: url("../assets/icons/darkTheme/pen-hover.svg");
+  --checkbox-icon: url("../assets/icons/darkTheme/checkbox.svg");
+  --checkbox-hover-icon: url("../assets/icons/darkTheme/checkbox-hover.svg");
+  --checkbox-checked-icon: url("../assets/icons/darkTheme/checkbox-checked.svg");
+  --plus-icon: url("../assets/icons/darkTheme/plus.svg");
+
+  --theme-button-width: 28px;
+  --theme-button-small-width: 20px;
+}

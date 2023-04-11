@@ -7,11 +7,13 @@ import s from "./styles/TodoHeader.module.scss";
 
 const TodoHeader = () => {
   const [task, setTask] = useState("");
+
   const dispatch = useDispatch();
 
   const handleKeyUp = (e) => {
     const title = e.target.value.trim();
-    if (e.keyCode === 13 && title !== "") {
+
+    if (e.key === "Enter" && title !== "") {
       dispatch(addTodo({ title }));
       setTask("");
     }
